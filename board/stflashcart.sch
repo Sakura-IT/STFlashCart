@@ -31,7 +31,6 @@ LIBS:valves
 LIBS:atarist
 LIBS:xilinx-cplds
 LIBS:spansion
-LIBS:stflashcart-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
@@ -525,7 +524,7 @@ _FL_BY
 Text GLabel 6350 6800 2    39   Input ~ 0
 _FL_WE
 Text GLabel 6350 6900 2    39   Input ~ 0
-_RESET
+_FL_RST
 Entry Wire Line
 	4150 3250 4250 3350
 Text Label 2550 1150 0    39   ~ 0
@@ -1649,4 +1648,99 @@ Text Notes 5150 5850 0    79   ~ 0
 FLASH
 Text Notes 6300 2300 0    79   ~ 0
 MCU
+Text Notes 9400 5350 0    79   ~ 0
+CPLD
+$Comp
+L AVR-ISP-6 J3
+U 1 1 59807207
+P 2700 7300
+F 0 "J3" H 2595 7540 50  0000 C CNN
+F 1 "AVR-ISP-6" H 2435 7070 50  0000 L BNN
+F 2 "AVR-ISP-6" V 2180 7340 50  0001 C CNN
+F 3 "" H 2675 7300 50  0000 C CNN
+	1    2700 7300
+	1    0    0    -1  
+$EndComp
+Text GLabel 2200 7200 0    39   Input ~ 0
+MISO
+Wire Wire Line
+	2200 7200 2550 7200
+$Comp
+L +3.3V #PWR?
+U 1 1 598078AB
+P 3200 7200
+F 0 "#PWR?" H 3200 7050 50  0001 C CNN
+F 1 "+3.3V" H 3200 7340 50  0000 C CNN
+F 2 "" H 3200 7200 50  0000 C CNN
+F 3 "" H 3200 7200 50  0000 C CNN
+	1    3200 7200
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2800 7200 3200 7200
+Text GLabel 2200 7300 0    39   Output ~ 0
+SCK
+Text GLabel 2200 7400 0    39   Output ~ 0
+_RESET
+Text GLabel 3200 7300 2    39   Output ~ 0
+MOSI
+Wire Wire Line
+	2200 7300 2550 7300
+Wire Wire Line
+	2800 7300 3200 7300
+$Comp
+L GND #PWR?
+U 1 1 5980804C
+P 3200 7400
+F 0 "#PWR?" H 3200 7150 50  0001 C CNN
+F 1 "GND" H 3200 7250 50  0000 C CNN
+F 2 "" H 3200 7400 50  0000 C CNN
+F 3 "" H 3200 7400 50  0000 C CNN
+	1    3200 7400
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2800 7400 3200 7400
+Wire Wire Line
+	2550 7400 2200 7400
+Text GLabel 5800 900  1    39   Input ~ 0
+MOSI
+Text GLabel 5900 900  1    39   Output ~ 0
+MISO
+Text GLabel 5700 900  1    39   Input ~ 0
+SCK
+Text GLabel 6300 3700 3    39   Input ~ 0
+_RESET
+Wire Wire Line
+	6300 3700 6300 3600
+Wire Wire Line
+	5900 1000 5900 900 
+Wire Wire Line
+	5800 900  5800 1000
+Wire Wire Line
+	5700 1000 5700 900 
+Text GLabel 5800 3700 3    39   Output ~ 0
+_FL_WP
+Text GLabel 5900 3700 3    39   Output ~ 0
+_FL_OE
+Text GLabel 6000 3700 3    39   Output ~ 0
+_FL_CE
+Text GLabel 6100 3700 3    39   Input ~ 0
+_FL_BY
+Text GLabel 6200 3700 3    39   Output ~ 0
+_FL_WE
+Text GLabel 7700 3650 3    39   Output ~ 0
+_FL_RST
+Wire Wire Line
+	6200 3700 6200 3600
+Wire Wire Line
+	7700 3650 7700 3600
+Wire Wire Line
+	6100 3700 6100 3600
+Wire Wire Line
+	6000 3700 6000 3600
+Wire Wire Line
+	5900 3700 5900 3600
+Wire Wire Line
+	5800 3700 5800 3600
 $EndSCHEMATC
